@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.weather-box{
+    height: 25rem;
+    box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.3);
+    background-color: #96a6d6;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+}
+.weather-box:hover{
+    height: 25rem;
+    box-shadow: 15px 15px 30px -5px rgba(0, 0, 0, 0.3);
+    background-color: #96a6d6;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+}

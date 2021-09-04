@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import Navbar from './components/Navbar';
+import Weather from './components/Weather/Weather';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  const [city, setCity] = useState("Waidhan")
+
+  const handleSearchChange=(event)=>  {
+    setCity(event.target.value);
+    
+ }
+
+let  apiKey =process.env.REACT_APP_WEATHER_API
+
+return (
+    <>
+    <Navbar handleSearchChange={handleSearchChange} />
+    {/* <Navbar  /> */}
+    <Weather apiKey={apiKey} city={city}/>
+
+    </>
   );
 }
 
