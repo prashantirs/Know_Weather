@@ -18,12 +18,12 @@ export default function Weather(props) {
     return (
         <>
         <div>
-            <div className="container my-3">
+            <div className=" title-body container my-3">
                 <h1 className="text-center">Weather</h1>
             </div>
-            <div className="container ">
+            <div className="container whole-body">
                 <div className="weather-box py-3" >
-                     {!weather?(<p>No record found</p>):(<><h3>{props.city}</h3><br /><h3>{weather.temp}°C</h3></>)}
+                     {!weather?(<p>No record found</p>):(<><h3>{props.city}</h3><br /><h3 className="temp">{weather.temp}°C</h3></>)}
                      </div>
             </div>
         </div>
