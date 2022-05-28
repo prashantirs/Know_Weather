@@ -15,7 +15,7 @@ export default function Navbar(props) {
       </ul>
 
         <form className="d-flex ">
-          <input className="form-control me-2  " onChange={props.handleSearchChange}    type="search" id="mySearch"  placeholder="Search Loaction" aria-label="Search" autocomplete="off"/>
+          <input className="form-control me-2  " onChange={props.handleSearchChange}    type="search" id="mySearch"  placeholder="Search Loaction" aria-label="Search" autoComplete="off"/>
         </form>
     </div>
   </div>

@@ -7,7 +7,10 @@ function App() {
   const [city, setCity] = useState("Waidhan")
 
   const handleSearchChange=(event)=>  {
-    setCity(event.target.value);
+    setTimeout(() => {
+      setCity(event.target.value);
+    }, 5000);
+    
     
  }
 
