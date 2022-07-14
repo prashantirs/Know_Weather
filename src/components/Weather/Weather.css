@@ -42,15 +42,19 @@
 }
 .description{
     display: block;
-
+    padding: 2rem 0;
     background: white;
     color: black;
     font-weight:bolder;
-    opacity: 0.6;
+    opacity: 0.8;
     width: 20rem;
     margin: 2rem auto;
     border-radius: 12px;
     box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+p{
+    text-transform:capitalize;
 }
 
 @media (max-width: 1028px){

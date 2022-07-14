@@ -8,7 +8,6 @@ export default function Weather(props) {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&units=metric&appid=${props.apiKey}`;
         let data = await fetch(url);
         let parsedData = await data.json();
-        console.log(parsedData);
         setWeather(parsedData);
     }
     useEffect(() => {
@@ -34,7 +33,7 @@ export default function Weather(props) {
                                 </h3>
                                 <div className='description'>
                                         {weather.weather[0].main}
-                                    <p>{weather.weather[0].description}</p>
+                                    <p>({weather.weather[0].description})</p>
                                 </div>
                             </>)}
                     </div>
