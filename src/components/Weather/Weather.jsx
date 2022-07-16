@@ -7,6 +7,10 @@ export default function Weather(props) {
     const fetchWeather = async () => {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&units=metric&appid=${props.apiKey}`;
         let data = await fetch(url);
+        console.log(data);
+        if(data.status === '404'){
+            return ;
+        }
         let parsedData = await data.json();
         setWeather(parsedData);
     }
@@ -23,8 +27,19 @@ export default function Weather(props) {
                 </div>
                 <div className="container whole-body">
                     <div className="weather-box py-3" >
-                        {!weather ?
-                            (<p>No record found</p>) :
+                        {!weather || weather.cod==='404' ?
+                            (<>
+                                <p className='error-msg'>🙁 No Place like 
+                                    <strong>
+                                    {" "+ props.city + " "}
+                                    </strong>
+                                    Exists in our database 
+                                   
+                                    <marquee behavior="scroll" direction="left">Try searching with correct spelling </marquee>
+
+                                </p>
+                            </>
+                            ) :
                             (<>
                                 <h3>{props.city}</h3>
                                 <br />
@@ -35,7 +50,8 @@ export default function Weather(props) {
                                         {weather.weather[0].main}
                                     <p>({weather.weather[0].description})</p>
                                 </div>
-                            </>)}
+                            </>)
+                        }
                     </div>
                 </div>
             </div>

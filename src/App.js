@@ -20,7 +20,6 @@ let  apiKey =process.env.REACT_APP_WEATHER_API
 return (
     <>
     <Navbar handleSearchChange={handleSearchChange} />
-    {/* <Navbar  /> */}
     <Weather apiKey={apiKey} city={city}/>
     <Footer/>
     </>
