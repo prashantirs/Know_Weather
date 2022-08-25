@@ -14,9 +14,10 @@ export default function Weather(props) {
         let parsedData = await data.json();
         setWeather(parsedData);
     }
+
     useEffect(() => {
         fetchWeather();
-        // eslint-disable-next-line
+        
     }, [props.city])
 
     return (
@@ -27,7 +28,7 @@ export default function Weather(props) {
                 </div>
                 <div className="container whole-body">
                     <div className="weather-box py-3" >
-                        {!weather || weather.cod==='404' ?
+                        {!weather || weather.cod==='404' || weather.cod==='400' ?
                             (<>
                                 <p className='error-msg'>🙁 No Place like 
                                     <strong>
